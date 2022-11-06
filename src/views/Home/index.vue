@@ -1,6 +1,6 @@
 <template>
   <div >
-  
+    <h1>{{ title }}</h1>
   </div>
 </template>
 
@@ -40,12 +40,5 @@ defineExpose({
 
 </script>
 <style scoped lang='less'>
-  .title-enter,
-  .title-leave-to{
-     transition: 0.5s linear;
-  }
-  .title-enter-to,
-  .title-leave {
-    transform: translateX(0px);
-  }
+  
 </style>
