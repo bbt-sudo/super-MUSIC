@@ -1,6 +1,6 @@
 <template>
   <div >
-    <h1>{{ title }}</h1>
+    
   </div>
 </template>
 
@@ -40,5 +40,7 @@ defineExpose({
 
 </script>
 <style scoped lang='less'>
-  
+  h1{
+    background-color: var(--themeBgColor);
+  }
 </style>
