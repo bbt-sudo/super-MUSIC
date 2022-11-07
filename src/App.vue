@@ -8,12 +8,10 @@
         <p>很赞音乐</p>
       </div>
       <div class="search">
-        <n-input class="ser" size="large" v-model:value="value" type="text" placeholder="基本的 Input" />
+        <a-input-search class="search-input" placeholder="搜索歌曲"/>
       </div>
       <div class="login">
-        <n-button class="login-btn" color="#8a2be2" @click="lgoin">
-          登录
-      </n-button>
+       
       </div>
     </div>
     <router-view></router-view>
@@ -21,17 +19,12 @@
  
 </template>
 <script setup lang="ts">
-import { useDialog } from 'naive-ui';
+
 import { Ref, ref } from 'vue'
 const value: Ref<string> = ref('')
 
 const lgoin = () => {
-  useDialog().info(({
-      title: "提示",
-      content: "您确定要退出登录吗",
-      positiveText: "确定",
-      negativeText: "取消",
-  }));
+
 }
 </script>
 <style lang="less">
@@ -67,11 +60,10 @@ const lgoin = () => {
     }
   }
   .search{
-    .ser{
+    .search-input{
       width: 30vw;
       height: 5vh;
-      background-color: var(--themeBgColor);
-      color: var(--themeColor);
+      color: rgb(255, 255, 255);
     }
   }
   .login{
