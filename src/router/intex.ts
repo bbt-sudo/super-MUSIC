@@ -6,6 +6,13 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
+    children: [
+      {
+        path: 'recommend',
+        name: 'recommend',
+        component: () => import('../views/Home//Recommend/index.vue'),
+      },
+    ],
   },
   {
     path: '/user',

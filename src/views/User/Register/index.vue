@@ -1,44 +1,42 @@
 <template>
-  <div class="register">
-    <div class="box">
-      <div class="l">
+  <div class="reg-box">
+      <div class="reg-l">
         <img src="../../../assets/logo.png" alt="">
       </div>
-      <div class="r">
+      <div class="reg-r">
         <form >
-          <div class="input">
+          <div class="reg-input">
             <label>昵称</label>
             <input type="text" v-model="form.nickname">
           </div>
-          <div class="input">
+          <div class="reg-input">
             <label>手机号</label>
             <input type="text" v-model="form.phone">
           </div>
-          <div class="input">
+          <div class="reg-input">
             <label>密码</label>
             <input type="password" v-model="form.password">
           </div>
-          <div class="input">
+          <div class="reg-input">
             <label>验证码</label>
             <input type="text" v-model="form.captcha">
-            <span class="verification" @click="sendvf">{{ seconds }}</span>
+            <span class="reg-verification" @click="sendvf">{{ seconds }}</span>
           </div>
-          <span class="submit" @click="submit">注册</span>
+          <span class="reg-submit" @click="submit">注册</span>
         </form>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed, getCurrentInstance } from 'vue';
+import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed, getCurrentInstance, Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios'
 const { proxy } = getCurrentInstance() as any
 /**
 * 仓库
 */
-let seconds: any = ref('发送验证码');
+let seconds: Ref<any> = ref('发送验证码');
 const form = reactive({
   nickname: '',
   phone: '',
@@ -114,14 +112,12 @@ defineExpose({
 
 </script>
 <style scoped lang='less'>
-.register{
-  .box{
+.reg-box{
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-}
 form{
   width: 50vw;
   margin: 0 auto;
@@ -133,7 +129,7 @@ form{
   justify-content: center;
   border-radius: 1vw;
 }
-.input{
+.reg-input{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +150,7 @@ form{
       border-radius: 2px;
       font-size: 1vw;
     }
-    .verification{
+    .reg-verification{
       display: block;
       position: absolute;
       right: 1vw;
@@ -168,7 +164,7 @@ form{
       border-radius: 0.3vw;
     }
   }
-.submit{
+.reg-submit{
   width: 30vw;
   height: 6vh;
   border-radius: 1vw;
@@ -179,5 +175,12 @@ form{
   line-height: 6vh;
   text-align: center;
   color: var(--themeColor)
+}
+.reg-l{
+  background-color: #efefef;
+  img{
+    width: 33vw;
+    height: 75vh;
+  }
 }
 </style>
