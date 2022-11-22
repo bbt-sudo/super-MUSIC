@@ -1,38 +1,42 @@
 
 
 <template>
-  <div>
-    <div class="nav">
-      <div class="logo">
-        <img src="./assets/logo.png" alt="">
-        <p>很赞音乐</p>
-      </div>
-      <div class="search">
-        <a-input-search class="search-input" placeholder="搜索歌曲"/>
-      </div>
-      <div class="login">
-       
-      </div>
+  <div class="app">
+    <div class="l">
+      <LeftNav></LeftNav>
     </div>
-    <router-view></router-view>
+    <div class="r">
+      <TopNav></TopNav>
+      <router-view></router-view>
+    </div>
   </div>
  
 </template>
 <script setup lang="ts">
-
+import TopNav from './component/TopNav/index.vue'
+import LeftNav from './component/LeftNav/index.vue'
 import { Ref, ref } from 'vue'
-const value: Ref<string> = ref('')
+import { useRoute, useRouter } from 'vue-router';
 
-const lgoin = () => {
+const route = useRoute()
+const router = useRouter()
 
-}
 </script>
 <style lang="less">
+body{
+  background-color: #efefef;
+}
 *{
   padding: 0;
   margin: 0;
 }
-
+.icon{
+  width: 2vw;
+  height: 1em;
+  vertical-align: -0.25vw;
+  fill: currentColor;
+  overflow: hidden;
+}
 :root {
   --themeColor: #fff; // 字体色
   --themeBgColor: red; // 背景色
@@ -40,38 +44,8 @@ const lgoin = () => {
   --themeBgColor5:rgba(0,0,0,.5); // 半色背景色
   --themeFontSize: 2vw;
 }
-.nav{
-  width: 100vw;
-  height: 10vh;
+.app{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  align-content: center;
-  background-color: var(--themeBgColor);
-  .logo{
-    display: flex;
-    align-items: center;
-    color: var(--themeColor);
-    font-size: var(--themeFontSize);
-    img{
-      display: block;
-      width: 10vw;
-      height: 10vh;
-    }
-  }
-  .search{
-    .search-input{
-      width: 30vw;
-      height: 5vh;
-      color: rgb(255, 255, 255);
-    }
-  }
-  .login{
-    margin-right: 10px;
-    .login-btn{
-      height: 7vh;
-      width: 8vw;
-    }
-  }
+  height: 100vh;
 }
 </style>

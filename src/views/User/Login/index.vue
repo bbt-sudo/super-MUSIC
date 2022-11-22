@@ -1,16 +1,15 @@
 <template>
-  <div >
-    <router-view></router-view>
-  </div>
+  <div >222</div>
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed, Ref } from 'vue';
+import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed } from 'vue';
+
 import { useRoute, useRouter } from 'vue-router';
 /**
 * 仓库
 */
-const title: Ref<string> = ref('Home')
+
 /**
 * 路由对象
 */
@@ -40,7 +39,4 @@ defineExpose({
 
 </script>
 <style scoped lang='less'>
-  h1{
-    background-color: var(--themeBgColor);
-  }
 </style>

@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
+import { HomeState } from './types'
 
 export const UseHomeStore = defineStore('homeStore', {
-  state: () => ({}),
+  state: (): HomeState => ({}),
   getters: {},
   actions: {},
 })
